@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BookNest.Models.Domain.Publisher>
+@{
+}
+
+<!-- Display a list of publishers -->
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-md-12 text-end mb-3">
+            <a class="btn btn-dark" href="/Publisher/Add"><i class="bi bi-plus-circle"></i> Add New Publisher</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-primary"><i class="bi bi-bookmarks"></i> Publishers</h3> <!-- Header with icon -->
+            <!-- Table to display publisher details -->
+            <table class="table table-striped table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th>Publisher Name</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through each publisher -->
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.PublisherName</td>
+                            <td class="text-center">
+                                <!-- Edit and delete actions -->
+                                <a class="btn btn-success btn-sm" href="/Publisher/Update?id=@item.Id"><i class="bi bi-pencil-square"></i> Edit</a> |
+                                <a class="btn btn-danger btn-sm" onclick="return window.confirm('Are you sure you want to delete this publisher?')" href="/Publisher/Delete?id=@item.Id"><i class="bi bi-trash"></i> Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

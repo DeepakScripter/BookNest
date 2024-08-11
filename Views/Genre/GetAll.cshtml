@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BookNest.Models.Domain.Genre>
+
+<div class="container pt-5">
+    <div class="row justify-content-between mb-4">
+        <div class="col-md-6">
+            <h3 class="text-primary"><i class="bi bi-tags-fill"></i> Genres</h3>
+        </div>
+        <div class="col-md-6 text-end">
+            <a class="btn btn-primary" href="/Genre/Add"><i class="bi bi-plus-circle"></i> Add Genre</a> <!-- Button to add more genres -->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered">
+                    <thead class="bg-dark text-white">
+                        <tr>
+                            <th>Name</th> <!-- Column for genre names -->
+                            <th class="text-center">Action</th> <!-- Column for actions -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <!-- Loop through each genre -->
+                            <tr>
+                                <td>@item.Name</td> <!-- Display the name of the genre -->
+                                <td class="text-center">
+                                    <a class="btn btn-success btn-sm me-2" href="/Genre/Update?id=@item.Id">
+                                        <i class="bi bi-pencil-square"></i> Edit
+                                    </a> <!-- Button to edit the genre -->
+                                    <a class="btn btn-danger btn-sm" onclick="return window.confirm('Are you sure?')" href="/Genre/Delete?id=@item.Id">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </a> <!-- Button to delete the genre -->
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

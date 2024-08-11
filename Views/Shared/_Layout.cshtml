@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BookNest</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        a {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-decoration: none; /* Removes underline from links */
+        }
+
+        body {
+            background-color: #121212; /* Dark background for better contrast */
+            color: #e0e0e0; /* Light gray text color */
+        }
+
+        .navbar {
+            padding: 10px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+        }
+
+            .nav-link.active {
+                font-weight: bold;
+                border-bottom: 2px solid #ffffff; /* Highlight active link */
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">BookNest</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="/Genre/Add" class="nav-link">Genre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Author/Add" class="nav-link">Author</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Publisher/Add" class="nav-link active">Publisher</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/Book/Add" class="nav-link">Book</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> <!-- Ensure Bootstrap JS is included -->
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BookNest.Models.Domain.Author>;
+
+<div class="container pt-5">
+    <div class="row mb-3">
+        <div class="col-md-12 d-flex justify-content-between align-items-center">
+            <h3>Authors List</h3>
+            <a class="btn btn-primary" href="/Author/Add">
+                <i class="bi bi-plus-lg"></i> Add New Author
+            </a> <!-- Button to navigate to the Add Author page -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered">
+                    <!-- Table to display the list of authors -->
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Author Name</th> <!-- Table header for AuthorName -->
+                            <th class="text-center">Actions</th> <!-- Table header for Actions -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <!-- Loop through each author in the model -->
+                            <tr>
+                                <td>@item.AuthorName</td> <!-- Display the AuthorName -->
+                                <td class="text-center">
+                                    <a class="btn btn-success btn-sm" href="/Author/Update?id=@item.Id">
+                                        <i class="bi bi-pen"></i> Edit
+                                    </a> <!-- Button to edit the author -->
+                                    <a class="btn btn-danger btn-sm" onclick="return window.confirm('Are you sure you want to delete this author?')" href="/Author/Delete?id=@item.Id">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </a> <!-- Button to delete the author -->
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

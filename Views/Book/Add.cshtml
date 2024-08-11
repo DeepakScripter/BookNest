@@ -1,0 +1,71 @@
+﻿@model BookNest.Models.Domain.Book;
+
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title"><i class="bi bi-book"></i> Add Book</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Add" method="post">
+                        <!-- Form to add a new book -->
+                        <div class="form-group mb-3">
+                            <label asp-for="Title" class="form-label">Title *</label> <!-- Label for Title -->
+                            <input type="text" class="form-control" asp-for="Title" placeholder="Enter book title" /> <!-- Input field for Title -->
+                            <span asp-validation-for="Title" class="text-danger"></span> <!-- Validation message for Title -->
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="GenreId" class="form-label">Genre *</label> <!-- Label for Genre -->
+                            <select asp-for="GenreId" asp-items="Model.GenreList" class="form-control">
+                                <option value="">--Select Genre--</option>
+                            </select>
+                            <span asp-validation-for="GenreId" class="text-danger"></span> <!-- Validation message for Genre -->
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Isbn" class="form-label">ISBN *</label> <!-- Label for ISBN -->
+                            <input type="text" class="form-control" asp-for="Isbn" placeholder="Enter ISBN number" /> <!-- Input field for ISBN -->
+                            <span asp-validation-for="Isbn" class="text-danger"></span> <!-- Validation message for ISBN -->
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="TotalPages" class="form-label">Total Pages *</label> <!-- Label for Total Pages -->
+                            <input type="number" class="form-control" asp-for="TotalPages" placeholder="Enter total pages" /> <!-- Input field for Total Pages -->
+                            <span asp-validation-for="TotalPages" class="text-danger"></span> <!-- Validation message for Total Pages -->
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="AuthorId" class="form-label">Author *</label> <!-- Label for Author -->
+                            <select asp-for="AuthorId" asp-items="Model.AuthorList" class="form-control">
+                                <option value="">--Select Author--</option>
+                            </select>
+                            <span asp-validation-for="AuthorId" class="text-danger"></span> <!-- Validation message for Author -->
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="PubhlisherId" class="form-label">Publisher *</label> <!-- Label for Publisher -->
+                            <select asp-for="PubhlisherId" asp-items="Model.PublisherList" class="form-control">
+                                <option value="">--Select Publisher--</option>
+                            </select>
+                            <span asp-validation-for="PubhlisherId" class="text-danger"></span> <!-- Validation message for Publisher -->
+                        </div>
+
+                        @if (TempData["msg"] != null)
+                        {
+                            <div class="alert alert-success mt-3">
+                                <i class="bi bi-check-circle"></i> @TempData["msg"]
+                            </div>
+                        }
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-success"><i class="bi bi-save"></i> Save</button> <!-- Button to save the book -->
+                            <a href="/Book/GetAll" class="btn btn-secondary"><i class="bi bi-list"></i> View All Books</a> <!-- Link to the book list -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

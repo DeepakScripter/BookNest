@@ -1,0 +1,32 @@
+﻿@model BookNest.Models.Domain.Genre
+
+@{
+}
+
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-primary"><i class="bi bi-pencil-square"></i> Update Genre</h3> <!-- Header with icon -->
+
+            <form asp-action="Update" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="form-group mb-3">
+                    <label asp-for="Name" class="form-label">Genre Name *</label> <!-- Label for Name -->
+                    <input type="text" class="form-control" asp-for="Name" placeholder="Enter genre name" /> <!-- Input field for Name -->
+                    <span asp-validation-for="Name" class="text-danger"></span> <!-- Validation message for Name -->
+                </div>
+
+                @if (TempData["msg"] != null)
+                {
+                    <div class="alert alert-success">@TempData["msg"]</div> <!-- Display success message -->
+                }
+
+                <div class="form-group pt-3 d-flex justify-content-between">
+                    <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i> Save</button> <!-- Button to save changes -->
+                    <a href="/Genre/GetAll" class="btn btn-primary"><i class="bi bi-list"></i> Back to List</a> <!-- Button to go back to genre list -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

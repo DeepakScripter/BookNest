@@ -1,0 +1,36 @@
+﻿@model BookNest.Models.Domain.Publisher
+@{
+}
+
+<!-- Form to update a publisher -->
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-primary"><i class="bi bi-pencil-square"></i> Update Publisher</h3> <!-- Header with icon -->
+
+            <form asp-action="Update" method="post">
+                <!-- Hidden input for PublisherId -->
+                <input type="hidden" asp-for="Id" />
+
+                <div class="form-group mb-3">
+                    <label asp-for="PublisherName" class="form-label">Publisher Name *</label>
+                    <input type="text" class="form-control" asp-for="PublisherName" placeholder="Enter publisher name" />
+                    <span asp-validation-for="PublisherName" class="text-danger"></span>
+                </div>
+
+                <!-- Display any validation message -->
+                @if (TempData["msg"] != null)
+                {
+                    <div class="alert alert-success">@TempData["msg"]</div> <!-- Success message -->
+                }
+
+                <div class="form-group pt-3 d-flex justify-content-between">
+                    <!-- Submit and cancel buttons -->
+                    <button type="submit" class="btn btn-dark"><i class="bi bi-save"></i> Save</button>
+                    <a href="/Publisher/GetAll" class="btn btn-primary"><i class="bi bi-list"></i> Back to List</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
