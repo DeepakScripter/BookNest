@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CodeSphere\\CareerDestiny\\ASP.NET CORE\\PROGRAMENTOR (ASP.NET CORE )\\Lecture\\BookNest\\BookNest.csproj": {}
+    "D:\\CodeSphere\\GitHub\\BookNest\\BookNest.csproj": {}
   },
   "projects": {
-    "D:\\CodeSphere\\CareerDestiny\\ASP.NET CORE\\PROGRAMENTOR (ASP.NET CORE )\\Lecture\\BookNest\\BookNest.csproj": {
+    "D:\\CodeSphere\\GitHub\\BookNest\\BookNest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CodeSphere\\CareerDestiny\\ASP.NET CORE\\PROGRAMENTOR (ASP.NET CORE )\\Lecture\\BookNest\\BookNest.csproj",
+        "projectUniqueName": "D:\\CodeSphere\\GitHub\\BookNest\\BookNest.csproj",
         "projectName": "BookNest",
-        "projectPath": "D:\\CodeSphere\\CareerDestiny\\ASP.NET CORE\\PROGRAMENTOR (ASP.NET CORE )\\Lecture\\BookNest\\BookNest.csproj",
+        "projectPath": "D:\\CodeSphere\\GitHub\\BookNest\\BookNest.csproj",
         "packagesPath": "C:\\Users\\Deepak Vishvkarma\\.nuget\\packages\\",
-        "outputPath": "D:\\CodeSphere\\CareerDestiny\\ASP.NET CORE\\PROGRAMENTOR (ASP.NET CORE )\\Lecture\\BookNest\\obj\\",
+        "outputPath": "D:\\CodeSphere\\GitHub\\BookNest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Deepak Vishvkarma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.2.2, )"
+            },
             "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
               "target": "Package",
               "version": "[8.0.7, )"
