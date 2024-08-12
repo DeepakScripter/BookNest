@@ -1,20 +1,18 @@
 ﻿@model IEnumerable<BookNest.Models.Domain.Book>
 
 <div class="container pt-5">
-    <div class="row mb-4">
-        <div class="col-md-12 d-flex justify-content-between align-items-center">
-            <h3 class="mb-0">Books List</h3>
-            <div>
-                <a class="btn btn-primary" href="/Book/Add">
-                    <i class="bi bi-plus-lg"></i> Add New Book
-                </a>
-                <!-- Button to download the book list as an Excel file -->
-                <a class="btn btn-success" href="/Book/DownloadExcel">
-                    <i class="bi bi-download"></i> Download Excel
-                </a>
-            </div>
-        </div>
+    <div>
+        <!-- Button to navigate to the Add New Book page -->
+        <a class="btn btn-primary" href="/Book/Add">
+            <i class="bi bi-plus-lg"></i> Add New Book
+        </a>
+
+        <!-- Button to download the book list as an Excel file -->
+        <a class="btn btn-success" href="/Book/DownloadExcel">
+            <i class="bi bi-download"></i> Download Excel
+        </a>
     </div>
+
 
     <div class="row">
         <div class="col-md-12">
