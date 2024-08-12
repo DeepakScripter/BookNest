@@ -108,7 +108,7 @@ The application can be deployed on any platform that supports .NET Core. The rec
    - Use the Azure CLI or Azure Portal to deploy the application.
    - Set up CI/CD pipelines for automated deployment.
 
-## 📝 **HTML Layout Overview**
+## 📄 **HTML Layout Overview**
 
 ### 1. **HTML Structure**:
 
@@ -152,6 +152,22 @@ The application can be deployed on any platform that supports .NET Core. The rec
 - **🔧 asp-action**: Specifies the action method to handle form submissions.
 - **🔗 asp-for**: Binds form elements to model properties.
 - **❌ asp-validation-for**: Displays validation error messages.
+
+## 📚 **EPPlus Library Usage**
+
+**EPPlus** is used to generate Excel files in **BookNest**. Here's a summary of its usage in the `DownloadExcel` method:
+
+1. **Fetching Data**: Retrieves all books from the `bookService`.
+2. **License Context**: Sets the EPPlus license context to `NonCommercial` for non-commercial use. For commercial use, you need a valid license.
+3. **Excel Package Creation**: Creates a new Excel package and adds a worksheet named "Books".
+4. **Header Row**: Sets the first row of the worksheet with column headers such as "Title", "Genre", "ISBN", etc.
+5. **Populating Data**: Iterates through the list of books and fills the worksheet with data starting from the second row.
+6. **Saving the File**: Saves the data to a memory stream, which is then returned as a file download response with the appropriate content type for an Excel file.
+
+### **Additional Notes**:
+
+- **EPPlus License**: Ensure compliance with the EPPlus license terms. Use `LicenseContext.NonCommercial` for non-commercial projects or `LicenseContext.Commercial` with a valid commercial license.
+- **Error Handling**: Consider adding error handling to manage exceptions during the Excel generation process.
 
 ## 👥 **Contributing**
 
