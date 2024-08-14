@@ -84,7 +84,6 @@ Security is a key consideration in **BookNest**:
 
 Performance is optimized using:
 
-- **⚡ Caching**: In-memory caching for frequently accessed data.
 - **🔄 Asynchronous Programming**: Improves application responsiveness by handling multiple requests concurrently.
 - **⚙️ Optimized Queries**: Efficient database queries using LINQ, with eager loading to minimize the number of database calls.
 
